@@ -4,7 +4,6 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const genToken = async (userId, res) => {
-    console.log(process.env.SECRET);
     const token = jwt.sign({ userId }, process.env.SECRET, {
         expiresIn: '15d'
     })
