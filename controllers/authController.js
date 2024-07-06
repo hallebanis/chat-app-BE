@@ -69,10 +69,10 @@ export const signupUser = async (req, res) => {
         await newUser.save()
         await genToken(newUser._id, res)
         res.status(201).json({
-            _id: user._id,
-            fullName: user.fullName,
-            username: user.username,
-            profilePic: user.profilePic
+            _id: newUser._id,
+            fullName: newUser.fullName,
+            username: newUser.username,
+            profilePic: newUser.profilePic
         })
     } catch (error) {
         console.error(error);
